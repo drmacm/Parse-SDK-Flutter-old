@@ -103,7 +103,7 @@ class ParseInstallation extends ParseObject {
   }
 
   @override
-  Future<ParseResponse> create() async {
+  Future<ParseResponse> create({bool allowCustomObjectId = false}) async {
     final bool isCurrent = await ParseInstallation.isCurrent(this);
     if (isCurrent) {
       await _updateInstallation();
